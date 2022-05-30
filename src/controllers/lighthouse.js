@@ -2,7 +2,6 @@ const fs = require('fs');
 const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
 
-//let url = 'https://touchpointmarketing.mx/'
 let Check = async (url) => {
   const chrome = await chromeLauncher.launch({chromeFlags: ['--headless']});
   const options = {logLevel: 'info', output: 'html', onlyCategories: ['performance', 'accessibility','seo','best-practices'], port: chrome.port};
