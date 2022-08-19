@@ -2,9 +2,9 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-
 const port = process.env.PORT || 8080
 
+//const Worker = require('./src/controllers/worker')
 app.use(express.json());
 app.use(cors({
     "origin": '*',
@@ -22,3 +22,4 @@ server = app.listen(port, () => {
     console.log(`Server is power ⚡ on localhost:${port}`)
    
 })
+
