@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pm2-runtime start ecosystem.config.js --env production"
+    "start": "pm2-runtime start ecosystem.config.js --env production",
+    "deploy:cluster:prod": "pm2-runtime start ecosystem.config.js --env production --deep-monitoring"
+
   },
   "keywords": [],
   "author": "",
