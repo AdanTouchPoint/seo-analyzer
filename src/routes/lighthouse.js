@@ -11,13 +11,16 @@ router.get('/', async (req, res) => {
         console.log(req.body.url)
         const page = req.body.url
         let job = await workQueue.add({url: `${page}`});
+        console.log(job.id)
        workQueue.on('global:completed', (jobId, result) => {
             console.log(`Job ${jobId} completed`);
-        });
+         });
           res.status(206)
           res.json({
             success: true,
             message: `El proceso esta en cola`,
+            data: job.id
+            
         })
 } catch (error) {
         res.status(400)
